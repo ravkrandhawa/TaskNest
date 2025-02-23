@@ -31,12 +31,6 @@ export const createTask = async (task) => {
     }
 };
 
-
-export const deleteTask = async (taskId) => {
-    await fetch(`${API_URL}/tasks/${taskId}`, { method: "DELETE" });
-};
-
-
 export const uploadFile = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
@@ -52,4 +46,21 @@ export const uploadFile = async (file) => {
     console.log("File uploaded:", data); // Check what the API returns
     return data;
 };
+
+export const deleteTask = async (id) => {
+    const response = await axios.delete(`${API_URL}/tasks/${id}`);
+    return response.data;
+};
+
+export const getFiles = async () => {
+    const response = await axios.get(`${API_URL}/files`);
+    return response.data;
+};
+
+export const deleteFile = async (fileName) => {
+    const response = await axios.delete(`${API_URL}/files/${fileName}`);
+    return response.data;
+};
+
+
 
