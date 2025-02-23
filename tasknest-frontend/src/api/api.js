@@ -2,6 +2,7 @@ import axios from "axios"; // axios is better at handling requests than fetch
 
 const API_URL = "http://localhost:8000"; // Update if needed
 
+// get tasks function
 export const getTasks = async () => {
     const response = await fetch(`${API_URL}/tasks`);
     return response.json();
