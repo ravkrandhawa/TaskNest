@@ -26,7 +26,7 @@ body {
   text-align: center;
 }
 
-/* Navbar - Fixed at Top */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -54,7 +54,7 @@ body {
   background: #0056b3;
 }
 
-/* Task & File List Structure! */
+/* Task & File List Structure */
 .task-list, .file-list {
   display: flex;
   flex-direction: column;

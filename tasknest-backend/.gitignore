@@ -1,0 +1,8 @@
+.env
+api-gateway/.env
+task-service/.env
+file-service/.env
+node_modules
+api-gateway/node_modules
+task-service/node_modules
+file-service/node_modules

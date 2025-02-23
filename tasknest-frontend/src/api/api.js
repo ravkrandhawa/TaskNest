@@ -1,13 +1,14 @@
 import axios from "axios"; // axios is better at handling requests than fetch 
 
-const API_URL = "http://localhost:8000"; // Update if needed
+const API_URL = "http://localhost:8000/api"; // API Gateway URL 
 
-// get tasks function
+// Get tasks
 export const getTasks = async () => {
     const response = await fetch(`${API_URL}/tasks`);
     return response.json();
 };
 
+// Create task
 export const createTask = async (task) => {
     console.log("Sending task to API:", task);
     try {
@@ -32,11 +33,12 @@ export const createTask = async (task) => {
     }
 };
 
+// Upload file
 export const uploadFile = async (file) => {
     const formData = new FormData();
     formData.append("file", file);
 
-    console.log("Uploading file:", file.name); // Debugging log
+    console.log("Uploading file:", file.name);
 
     const response = await fetch(`${API_URL}/upload`, {
         method: "POST",
@@ -44,24 +46,24 @@ export const uploadFile = async (file) => {
     });
 
     const data = await response.json();
-    console.log("File uploaded:", data); // Check what the API returns
+    console.log("File uploaded:", data);
     return data;
 };
 
+// Delete task
 export const deleteTask = async (id) => {
     const response = await axios.delete(`${API_URL}/tasks/${id}`);
     return response.data;
 };
 
+// Get files
 export const getFiles = async () => {
     const response = await axios.get(`${API_URL}/files`);
     return response.data;
 };
 
+// Delete file
 export const deleteFile = async (fileName) => {
     const response = await axios.delete(`${API_URL}/files/${fileName}`);
     return response.data;
 };
-
-
-

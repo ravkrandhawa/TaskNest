@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PASSWORD = "tasknest123"; // Set your password here
+const PASSWORD = "tasknest123"; // Password for authentication
 
 function Login({ setUser }) {
     const [password, setPassword] = useState("");
