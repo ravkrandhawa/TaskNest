@@ -39,7 +39,7 @@ function App() {
                         path="/"
                         element={
                             <div>
-                                <h1>TaskNest - Kanban Board</h1>
+                                <h1>TaskNest</h1>
                                 <form onSubmit={handleCreateTask}>
                                     <input
                                         type="text"
